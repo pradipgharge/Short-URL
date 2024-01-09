@@ -10,14 +10,14 @@ async function handleUserSignUp(req, res) {
     password,
   });
 
-  return res.redirect("/");
+  return res.redirect("/login");
 }
 
 async function handleUserLogin(req, res) {
   const { email, password } = req.body;
   const user = await User.findOne({
-    email,
-    password,
+    email: email,
+    password: password,
   });
   if (!user) {
     return res.render("login", { error: "Invalid username or password" });

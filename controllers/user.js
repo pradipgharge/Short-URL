@@ -5,9 +5,9 @@ const { setUser } = require("../service/auth");
 async function handleUserSignUp(req, res) {
   const { name, email, password } = req.body;
   await User.create({
-    name,
-    email,
-    password,
+    name: name,
+    email: email,
+    password: password,
   });
 
   return res.redirect("/login");

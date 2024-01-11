@@ -21,7 +21,7 @@ app.set("views", path.resolve("./views"));
 app.use(express.json()); //parses incoming bodies
 app.use(express.urlencoded({ extended: false })); //to parse form data
 app.use(cookieParser()); //parse the cookies
-app.use(checkForAuthentication); // it will run everytime.
+app.use(checkForAuthentication); // it will run on every request.
 
 app.use("/url", restrictTo(["NORMAL"]), urlRoute);
 app.use("/", staticRoute);
